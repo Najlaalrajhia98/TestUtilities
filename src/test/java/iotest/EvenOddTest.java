@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package iotest;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -36,7 +34,7 @@ class EvenOddTest {
 
       
         // Tests the even nums 
-        int [] even = { 2,4,6,8};
+        int [] even = {2,4,6,8};
         HashMap <String,ArrayList<Integer>> expoutput = new HashMap<String,ArrayList<Integer>>();
         ArrayList<Integer> evennumbers= new ArrayList<Integer>();
         evennumbers.add(2);
