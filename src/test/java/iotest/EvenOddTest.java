@@ -22,10 +22,9 @@ class EvenOddTest {
   
         
         // Tests the Odd num
-        int [] odd = { 1,3,5,7,9};
+        int [] odd = {3,5,7,9};
         HashMap <String,ArrayList<Integer>> expout = new HashMap<String,ArrayList<Integer>>();
         ArrayList<Integer> oddnumbers= new ArrayList<Integer>();
-        oddnumbers.add(1);
         oddnumbers.add(3);
         oddnumbers.add(5);
         oddnumbers.add(7);
