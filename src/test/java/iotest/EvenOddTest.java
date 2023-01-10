@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -15,10 +16,8 @@ import org.junit.jupiter.api.Test;
 class EvenOddTest {
 
     @Test
-    void test() {
-        
-  
-        
+    @DisplayName("Tests 1")
+    void testodd() {
         // Tests the Odd num
         int [] odd = {3,5,7,9};
         HashMap <String,ArrayList<Integer>> expout = new HashMap<String,ArrayList<Integer>>();
@@ -28,12 +27,14 @@ class EvenOddTest {
         oddnumbers.add(7);
         oddnumbers.add(9);
         expout.put("odd", oddnumbers);
-       HashMap<String, ArrayList<Integer>> actualOut= EvenOdd.oddAndeven(odd, new ArrayList<Integer>(), new ArrayList<Integer>(), new HashMap<String, ArrayList<Integer>>());
+        HashMap<String, ArrayList<Integer>> actualOut= EvenOdd.oddAndeven(odd, new ArrayList<Integer>(), new ArrayList<Integer>(), new HashMap<String, ArrayList<Integer>>());
         assertEquals(expout,actualOut);
-        
+    }
+    @Test
+    @DisplayName("Tests 2")
+    // Tests the even nums 
+    void testeven() {
 
-      
-        // Tests the even nums 
         int [] even = {2,4,6,8};
         HashMap <String,ArrayList<Integer>> expoutput = new HashMap<String,ArrayList<Integer>>();
         ArrayList<Integer> evennumbers= new ArrayList<Integer>();
@@ -42,10 +43,14 @@ class EvenOddTest {
         evennumbers.add(6);
         evennumbers.add(8);
         expoutput.put("even", evennumbers);
-       HashMap<String, ArrayList<Integer>> actualOutput= EvenOdd.oddAndeven(even, new ArrayList<Integer>(), new ArrayList<Integer>(), new HashMap<String, ArrayList<Integer>>());
+        HashMap<String, ArrayList<Integer>> actualOutput= EvenOdd.oddAndeven(even, new ArrayList<Integer>(), new ArrayList<Integer>(), new HashMap<String, ArrayList<Integer>>());
         assertEquals(expoutput,actualOutput);
-        
-        // Tests the even and Odd 
+    }
+    @Test
+    @DisplayName("Tests 3")
+    // Tests the even and Odd 
+    void testevenandOdd() {
+
         int[] input = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         HashMap<String, ArrayList<Integer>> expectedOutput = new HashMap<String, ArrayList<Integer>>();
         ArrayList<Integer> oddNumbers = new ArrayList<Integer>();
@@ -63,23 +68,24 @@ class EvenOddTest {
         evenNumbers.add(10);
         expectedOutput.put("even", evenNumbers);
         assertEquals(expectedOutput,EvenOdd.oddAndeven( input,new ArrayList<Integer>(), new ArrayList<Integer>(), new HashMap<String, ArrayList<Integer>>()));
+
+    }
+    @Test
+    @DisplayName("Tests 4")
+    // Tests empty array
+    void testempty() {
         
-        // Tests empty array
         int [] arr= {} ;
         HashMap<String, ArrayList<Integer>> expectedout = new HashMap<String, ArrayList<Integer>>();
         HashMap<String, ArrayList<Integer>> actual = EvenOdd.oddAndeven( arr,new ArrayList<Integer>(), new ArrayList<Integer>(), new HashMap<String, ArrayList<Integer>>());
         assertEquals(expectedout,actual);
-        
-        
- 
-        
-        
-        
-        
-        
-        
-        
     }
-   
-
+    @Test
+    @DisplayName("Tests 5")
+    // Tests a Null argument
+    void testnull() {
+        int [] inputt = null;
+        assertThrows(NullPointerException.class, () -> EvenOdd.oddAndeven(inputt, new ArrayList<Integer>(), new ArrayList<Integer>(), new HashMap<String, ArrayList<Integer>>()));
+    }
 }
+
