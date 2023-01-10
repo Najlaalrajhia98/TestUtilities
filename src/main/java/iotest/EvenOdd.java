@@ -21,7 +21,7 @@ public class EvenOdd {
         ArrayList<Integer> evenStoreArrayList= new ArrayList<Integer>();
         HashMap<String,ArrayList<Integer>> numbers = new HashMap<String, ArrayList<Integer>>();
         
-        System.out.println(oddAndeven(arr,oddArrayList,evenStoreArrayList,numbers));
+        System.out.println(oddAndeven(null,oddArrayList,evenStoreArrayList,numbers));
        
 } 
     public static  HashMap<String,ArrayList<Integer>> oddAndeven(int[] arr,ArrayList<Integer> evenStoreArrayList,ArrayList<Integer> oddArrayList, HashMap<String,ArrayList<Integer>> numbers) {
